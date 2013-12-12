@@ -1,0 +1,31 @@
+<?php
+
+  /**
+   * @file Hook implementations and core functionality for the module
+   * @author griffinj
+   *
+   */
+
+/**
+ * Implements hook_preprocess().
+ */
+function islandora_dss_openseadragon_preprocess_islandora_openseadragon_viewer(&$variables) {
+
+  $library_path = libraries_get_path('openseadragon');
+  $module_path = drupal_get_path('module', 'islandora_openseadragon');
+
+  drupal_add_js(array(
+      'islandoraOpenSeadragon' => array(
+        'pid' => isset($variables['fedora_object'])? $variables['fedora_object']->id : NULL,
+        'resourceUri' => $variables['uri'],
+        'tileSize' => (int) variable_get('islandora_openseadragon_tile_size', '256'),
+        'tileOverlap' => (int) variable_get('islandora_openseadragon_tile_overlap', '0'),
+        'settings' => $settings,
+      ),
+    ), 'setting');
+
+  drupal_add_js("$module_path/js/islandora_dss_openseadragon.js");
+  //drupal_add_js("$library_path/openseadragon.js");
+  //drupal_add_js("$module_path/js/djtilesource.js");
+  //drupal_add_css("$module_path/css/islandora_openseadragon.theme.css");
+}

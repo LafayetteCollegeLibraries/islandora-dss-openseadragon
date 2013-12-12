@@ -1,0 +1,9 @@
+name = Islandora DSS OpenSeadragon
+description = Extension for the Islandora OpenSeadragon Module
+dependencies[] = libraries
+dependencies[] = islandora
+dependencies[] = islandora_openseadragon
+package = Lafayette College Libraries
+version = 7.x-1.2
+core = 7.x
+php = 5.3
