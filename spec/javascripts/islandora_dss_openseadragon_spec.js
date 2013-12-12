@@ -11,7 +11,9 @@ describe("DSS Islandora OpenSeadragon", function() {
 	beforeEach(function() {
 
 		// Drupal mock Object
-		drupal = { settings:
+		drupal = { behaviors:
+			   { islandoraOpenSeadragon: function(context, settings) { } },
+			   settings:
 			   { basePath: 'http://localhost/',
 			     islandoraOpenSeadragon:
 			     { resourceUri: 'http://uri/',

@@ -11,6 +11,9 @@
  */
 var DssOpenSeadragon = function($, Drupal) {
 
+    // JSLint
+    'use strict';
+
     this.$ = $;
 
     // Retrieve the original functionality
@@ -24,6 +27,9 @@ var DssOpenSeadragon = function($, Drupal) {
  *
  */
 DssOpenSeadragon.prototype.append = function(context, settings) {
+
+    // JSLint
+    'use strict';
 
     // Retrieve the appropriate values from the module
     var resourceUri = settings.islandoraOpenSeadragon.resourceUri;
